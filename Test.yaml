@@ -1,0 +1,6 @@
+---
+ 	- name: Windows connection test 
+ 	hosts: all 
+ 	tasks:
+ 	- name: ping windows machine
+ 	win_ping:
