@@ -19,6 +19,6 @@
     - name: create a user-name for database
       mysql_user:
         name: DevOps-Mastro
-        password: test123@
+        password: "test123@"
         priv: '*.*:ALL'
         state: present
