@@ -1,1 +1,12 @@
-
+---
+-name: slq-db-automation
+hosts: all
+tasks:
+  - name: Create directory
+    win_file:
+      path: "C:\sql_db"
+      state: directory
+  - name: Download mysql-installer.msi from nexus
+    win_get_url:
+      url:  http://207.246.89.89:8081/repository/raw-hosted/mysql-installer-web-community-8.0.16.0.msi
+      dest: "C:\sql_db\"
