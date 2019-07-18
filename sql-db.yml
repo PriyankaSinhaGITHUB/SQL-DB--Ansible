@@ -1,6 +1,7 @@
 ---
 - name: slq-db-automation
   hosts: all
+  become_method: runas
   tasks:
     - name: Create directory
       win_file:
@@ -15,11 +16,13 @@
     - name: install mysql-installer.msi
       win_package:
         path: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi
-        state: present        
+        state: present
+        become: yes
+        become_user: Administrator        
     - name: start my-sql service
       win_service:
         name: MySQL80
-        state: started
+        state: restarted
     #- name: create a user-name for database
       #mysql_user:
         #name: DevOps-Mastro
