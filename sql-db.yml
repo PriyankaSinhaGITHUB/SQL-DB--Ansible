@@ -15,9 +15,13 @@
     - name: install mysql-installer.msi
       win_package:
         path: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi
-        state: present
-    - name: create a user-name for database
-      mysql_user:
-        name: DevOps-Mastro
-        password: test123
-        state: present
+        state: present        
+    - name: start my-sql service
+      win_service:
+        name: mysql
+        state: started
+    #- name: create a user-name for database
+      #mysql_user:
+        #name: DevOps-Mastro
+        #password: test123
+        #state: present
