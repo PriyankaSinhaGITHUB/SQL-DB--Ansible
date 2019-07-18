@@ -18,7 +18,7 @@
         state: present        
     - name: start my-sql service
       win_service:
-        name: mysql
+        name: MySQL80
         state: started
     #- name: create a user-name for database
       #mysql_user:
