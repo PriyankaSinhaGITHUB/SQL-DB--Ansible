@@ -28,7 +28,7 @@
         #name: DevOps-Mastro
         #password: test123
         #state: present
-     - name: create a new database
-       mysql_db:
-         name: DevOps-Mastro
-         state: present
+    - name: create a new database
+      mysql_db:
+        name: DevOps-Mastro
+        state: present
