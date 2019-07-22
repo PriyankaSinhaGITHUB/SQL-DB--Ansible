@@ -19,12 +19,16 @@
         state: present
         become: yes
         become_user: Administrator        
-    - name: start my-sql service
-      win_service:
-        name: MySQL80
-        state: restarted
+    #- name: start my-sql service
+      #win_service:
+        #name: MySQL80
+        #state: restarted
     #- name: create a user-name for database
       #mysql_user:
         #name: DevOps-Mastro
         #password: test123
         #state: present
+     - name: create a new database
+       mysql_db:
+         name: DevOps-Mastro
+         state: present
