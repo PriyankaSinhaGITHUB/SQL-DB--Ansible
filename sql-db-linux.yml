@@ -1,19 +1,15 @@
 
 - name: sql-db-automation
   hosts: all
-  tasks:
-    - name: Give access
-      command: chmod 777 /home/
-      register: chmod_status
-    
+  tasks:  
     - name: Download sql source
       get_url:
         url: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-        dest: /home/mysql
+        dest: /tmp/mysql
 
     - name: Install package
       yum:
-        name: /home/mysql/mysql-community-release-el7-5.noarch.rpm
+        name: /tmp/mysql/mysql-community-release-el7-5.noarch.rpm
         state: present
 
     - name: Install MySQL
