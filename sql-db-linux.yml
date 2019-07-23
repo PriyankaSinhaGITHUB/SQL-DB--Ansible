@@ -8,7 +8,9 @@
         dest: /opt/mysql
 
     - name: Install package
-      yum: /opt/mysql/mysql-community-release-el7-5.noarch.rpm state: present
+      yum:
+        name: /opt/mysql/mysql-community-release-el7-5.noarch.rpm
+        state: present
 
     - name: Install MySQL
       yum: name=my-sql-server state=installed
