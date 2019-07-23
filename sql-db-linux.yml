@@ -2,6 +2,8 @@
 - name: sql-db-automation
   hosts: all
   tasks:
+    - name: Give access
+      shell: chmod 777 /home/
     - name: Download sql source
       get_url:
         url: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
