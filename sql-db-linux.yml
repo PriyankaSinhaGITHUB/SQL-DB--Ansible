@@ -1,16 +1,14 @@
 ---
-- name: sql-db automation
+- name: sql-db-automation
   hosts: all
   tasks:
-    - name: Download sources
+    - name: Download sql source
       get_url:
         url: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
         dest: /opt/mysql
-       
+
     - name: Install package
-      yum:
-        name: /opt/mysql/mysql-community-release-el7-5.noarch.rpm
-        state: present
+      yum: /opt/mysql/mysql-community-release-el7-5.noarch.rpm state: present
 
     - name: Install MySQL
-      yum: name=mysql-server state=installed
+      yum: name=my-sql-server state=installed
