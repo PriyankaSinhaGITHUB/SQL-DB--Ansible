@@ -5,7 +5,7 @@
     - name: Download sql source
       get_url:
         url: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-        dest: /tmp/mysql
+        dest: /tmp/mysql/
 
     - name: Install package
       yum:
