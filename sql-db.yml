@@ -19,6 +19,12 @@
         state: present
         become: yes
         become_user: Administrator        
+    - name: Get all the services
+      win_shell: Get-Service    
+    - name: Check if a service is installed
+      win_service:
+        name: MySQL80
+      register: service_info      
     #- name: start my-sql service
       #win_service:
         #name: MySQL80
@@ -28,7 +34,7 @@
         #name: DevOps-Mastro
         #password: test123
         #state: present
-    - name: create a new database
-      mysql_db:
-        name: DevOps-Mastro
-        state: present
+    #- name: create a new database
+     # mysql_db:
+      #  name: DevOps-Mastro
+       # state: present              
