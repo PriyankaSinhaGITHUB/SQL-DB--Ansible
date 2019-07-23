@@ -18,7 +18,9 @@
         path: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi
         state: present
         become: yes
-        become_user: Administrator        
+        become_user: Administrator
+    - name: install mysql-installer.msi    
+      win_shell: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi /quiet
     - name: Get all the services
       win_shell: Get-Service    
     - name: Check if a service is installed
