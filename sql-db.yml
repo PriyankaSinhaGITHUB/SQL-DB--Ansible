@@ -5,10 +5,10 @@
   tasks:
     - name: Create directory
       win_file:
-        path: C:\sql_db
+        path: C:\sql_db_install
         state: directory
     - name: clean target directory
-      win_shell: Remove-Item -path C:\sql_db\** -recurse
+      win_shell: Remove-Item -path C:\sql_db_install\** -recurse
     - name: Download mysql-installer.msi from nexus
       win_get_url:
         url:  http://207.246.89.89:8081/repository/raw-hosted/mysql-installer-community-8.0.17.0.msi
