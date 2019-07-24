@@ -11,16 +11,16 @@
       win_shell: Remove-Item -path C:\sql_db\** -recurse
     - name: Download mysql-installer.msi from nexus
       win_get_url:
-        url:  http://207.246.89.89:8081/repository/raw-hosted/mysql-installer-web-community-8.0.16.0.msi
-        dest: C:\sql_db\
-    - name: install mysql-installer.msi
-      win_package:
-        path: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi
-        state: present
-        become: yes
-        become_user: Administrator
+        url:  http://207.246.89.89:8081/repository/raw-hosted/mysql-installer-community-8.0.17.0.msi
+        dest: C:\sql_db_install\
+    #- name: install mysql-installer.msi
+     # win_package:
+      #  path: C:\sql_db_install\mysql-installer-web-community-8.0.16.0.msi
+      #  state: present
+      #  become: yes
+      #  become_user: Administrator
     - name: install mysql-installer.msi    
-      win_shell: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi /quiet
+      win_shell: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi /quiet
     - name: Get all the services
       win_shell: Get-Service    
     - name: Check if a service is installed
