@@ -13,12 +13,16 @@
       win_get_url:
         url:  http://207.246.89.89:8081/repository/raw-hosted/mysql-installer-community-8.0.17.0.msi
         dest: C:\sql_db_install\
-    - name: install mysql-installer.msi
+    - name: uninstall mysql-installer-web-community.msi
       win_package:
-        path: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi
-        state: present
-        become: yes
-        become_user: Administrator
+        path: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi
+        state: absent
+    #- name: install mysql-installer.msi
+      #win_package:
+        #path: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi
+        #state: present
+        #become: yes
+        #become_user: Administrator
     #- name: install mysql-installer.msi    
      # win_shell: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi /quiet
     - name: Get all the services
