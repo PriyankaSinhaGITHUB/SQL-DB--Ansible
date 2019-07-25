@@ -20,7 +20,7 @@
     - name: install mysql-installer.msi
       win_package:
         path: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi
-        arguments: /install
+        arguments: /install /passive
         state: present       
     #- name: install mysql-installer.msi    
      # win_shell: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi /quiet
