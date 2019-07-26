@@ -20,6 +20,10 @@
       win_msi:
         path: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi
         wait: yes
+    - name: Install the Visual C thingy
+      win_package:
+        path: C:\Program Files (x86)\MySQL\MySQL Installer for Windows
+        arguments: /install /passive /norestart
    # - name: uninstall mysql-installer-web-community.msi
     #  win_package:
      #   path: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi
