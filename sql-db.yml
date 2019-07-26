@@ -13,10 +13,10 @@
       win_get_url:
         url:  http://207.246.89.89:8081/repository/raw-hosted/mysql-installer-community-8.0.17.0.msi
         dest: C:\sql_db_install\
-   - name: Install an MSI file
+    - name: Install an MSI file
       win_msi:
         path: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi
-   - name: Install an MSI file, and wait for it to complete before continuing
+    - name: Install an MSI file, and wait for it to complete before continuing
       win_msi:
         path: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi
         wait: yes
