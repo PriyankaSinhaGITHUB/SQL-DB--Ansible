@@ -20,11 +20,15 @@
       win_msi:
         path: C:\sql_db_install\mysql-installer-community-8.0.17.0.msi
         wait: yes
-    - name: Install the Visual C thingy
-      win_package:
-        path: C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstaller.exe
-        product_id: '{CF2BEA3C-26EA-32F8-AA9B-331F7E34BA97}'
-        arguments: /install /passive /norestart
+    - name: Uninstall Remote Desktop Connection Manager
+      win_package:
+        product_id: '{827F2F48-CCB9-4018-9AA3-0CA9FA3223E1}'
+        state: absent
+    #- name: Install the Visual C thingy
+     # win_package:
+      #  path: C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstaller.exe
+       # product_id: '{CF2BEA3C-26EA-32F8-AA9B-331F7E34BA97}'
+        #arguments: /install /passive /norestart
    # - name: uninstall mysql-installer-web-community.msi
     #  win_package:
      #   path: C:\sql_db\mysql-installer-web-community-8.0.16.0.msi
